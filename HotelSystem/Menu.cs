@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection.Emit;
 using System.Text;
 
 namespace HotelSystem
 {
     internal static class Menu
     {
-        public static void Primero()
+        // Métodos
+        public static void Primero() // El menú llamado en Main() que da paso a la ejecución del resto del programa. Opciones para escoger el actor.
         {
             Encabezado();
             Console.WriteLine("MENÚ PRINCIPAL");
@@ -28,7 +30,7 @@ namespace HotelSystem
                     break;
             }
         }
-        public static void Recepcion()
+        public static void Recepcion() // Opciones de recepcionista
         {
             Console.WriteLine("RECEPCIÓN");
             Console.WriteLine("[1] Consultar los precios de las habitaciones");
@@ -54,7 +56,7 @@ namespace HotelSystem
                     break;
             }
         }
-        public static void Reserva()
+        public static void Reserva() // Por resolver. Ejecuta la secuencia para realizar una #Reserva.
         {
             if (Hotel.HayHabitacionesDisponibles())
             {
@@ -77,11 +79,11 @@ namespace HotelSystem
                 Console.WriteLine("No hay habitaciones disponibles en este momento");
             }
         }
-        public static void CancelarReserva()
+        public static void CancelarReserva() // Por resolver. Ejecuta la secuencia para cancelar una #Reserva.
         {
 
         }
-        public static void Administrador()
+        public static void Administrador() // Opciones de administrador
         {
             Encabezado();
             Console.WriteLine("ADMINISTRACIÓN");
@@ -103,11 +105,11 @@ namespace HotelSystem
                     break;
             }
         }
-        public static void ModificarPrecios()
+        public static void ModificarPrecios() // Por resolver. Ejecuta la secuencia para modificar los precios de #TipoHabitacion.
         {
             
         }
-        public static void Encabezado()
+        public static void Encabezado() // Limpia la pantalla y muestra un texto. Se llama al principio de cada menú.
         {
             Console.Clear();
             Console.WriteLine(" * - HOTEL LAS PALMAS - * ");

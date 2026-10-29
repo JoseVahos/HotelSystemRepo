@@ -2,6 +2,7 @@
 skinparam classAttributeIconSize 0
 !theme plain
 
+class Program{}
 class Admin <<static>>{
     {static} +CalcularIngresosProyectados(): decimal
     {static} +ModificarPrecios(): void
@@ -55,6 +56,9 @@ Admin "1" -- "0..*" TipoHabitacion : Modifica
 Recepcionista "1" -- "0..*" Reserva : Realiza
 
 Hotel "1" *-- "1..*" Habitacion : tiene
+
+Program "1" -- "0..*" Cliente : tiene
+Program "1" -- "0..*" Reserva: tiene
 
 Menu -- Hotel : usa
 Menu -- Admin : usa
