@@ -1,0 +1,54 @@
+Clases
+
+@startuml
+skinparam classAttributeIconSize 0
+!theme plain
+
+class Hotel{
+    -nombre: string
+    -direccion: string
+}
+
+class Cliente{
+    -identificacion: string
+    -nombre: string
+}
+
+abstract class Habitacion{
+    -numero: string
+    -precio: float
+    -estaReservada: bool
+    +GetHabitacionDetails(): string
+}
+class Simple{}
+class Doble{}
+class Matrimonial{}
+
+class Reserva{
+    -fechaEntrada: DateOnly
+    -numeroNoches: int
+}
+class Recepcionista{
+    +ConsultarPrecios(): string
+    +ConsultarDisponibilidad(): string
+    +RealizarReserva(): void
+    +CancelarReserva(): void
+    +CalcularCosto(): float
+}
+class Admin{
+    +CalcularIngresosProyectados(): float
+    +ModificarPrecios(): void
+}
+
+Simple --|> Habitacion
+Doble --|> Habitacion
+Matrimonial --|> Habitacion
+
+Cliente "1" --* "0..*" Reserva : define
+Habitacion "1" --* "1" Reserva : define
+
+Admin "1" -- "0..*" Habitacion : Modifica
+Recepcionista "1" -- "0..*" Reserva : Realiza
+
+Hotel "1" *-- "1..*" Habitacion
+@enduml

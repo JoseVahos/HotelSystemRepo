@@ -1,0 +1,32 @@
+Diagrama de casos de uso Hotel Las Palmas
+
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Recepción" as recepcion
+actor "Administrador" as admin
+
+rectangle "Sistema Hotel Las Palmas" {
+  usecase "Consultar disponibilidad" as UC1
+  usecase "Consultar precios" as UC2
+  usecase "Calcular costo" as UC3
+  usecase "Realizar reserva" as UC4
+  usecase "Cancelar reserva" as UC5
+  usecase "Modificar precios" as UC6
+  usecase "Calcular ingresos proyectados" as UC7
+
+}
+
+recepcion --> UC1
+recepcion --> UC2
+recepcion --> UC3
+recepcion --> UC4
+recepcion --> UC5
+
+admin --> UC6
+admin --> UC7
+
+UC4 .> UC3 : <<include>>
+
+@enduml
