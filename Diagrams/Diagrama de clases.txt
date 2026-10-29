@@ -2,7 +2,9 @@
 skinparam classAttributeIconSize 0
 !theme plain
 
-class Program{}
+class Program{
+    {static} +GetCliente(identificacion: string?): Cliente?
+}
 class Admin <<static>>{
     {static} +CalcularIngresosProyectados(): decimal
     {static} +ModificarPrecios(): void
@@ -22,6 +24,7 @@ class Hotel <<static>>{
     {static} +HayHabitacionesDisponibles(): bool
     {static} +MostrarDisponibilidad(): void
     {static} +EsNumeroHabitacionValido(numeroHabitacion: string?): bool
+    {static} +GetHabitacion(numeroHabitacion: string?): Habitacion 
 }
 class Menu <<static>>{
     {static} +Primero(): void

@@ -19,6 +19,17 @@ namespace HotelSystem
             set { reservas = value; }
         }
         // Métodos
+        public static Cliente? GetCliente(string? identificacion) // Devuelve un #Cliente según su identificacion
+        {
+            foreach (Cliente cliente in clientes)
+            {
+                if (cliente.Identificacion == identificacion)
+                {
+                    return cliente;
+                }
+            }
+            return null;
+        }
         static void Main(string[] args)
         {
             Hotel.Setup();

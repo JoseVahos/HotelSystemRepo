@@ -73,5 +73,16 @@ namespace HotelSystem
             }
             return false;
         }
+        public static Habitacion GetHabitacion(string? numeroHabitacion) // Devuelve una #habitacion según su numero
+        {
+            foreach (Habitacion habitacion in habitaciones)
+            {
+                if (habitacion.Numero == numeroHabitacion)
+                {
+                    return habitacion;
+                }
+            }
+            throw new ArgumentException("El número ingresado no es válido");
+        }
     }
 }

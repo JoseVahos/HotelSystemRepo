@@ -1,5 +1,6 @@
 TAREAS
 
+
 Completación de clases, comentarios y correcciones diagramas
 
 [W] Agregar clientes y reservas al Program
@@ -17,11 +18,15 @@ Completación de clases, comentarios y correcciones diagramas
 [W] Añadir ese <<Include>> al diagrama de casos de uso y otras correcciones
 
 
+Métodos que podrían necesitarse más adelante
 
+[W] Añadir GetHabitacion() a #Hotel para obtener una #Habitación según un numeroHabitacion
 
-[] Añadir GetHabitacion() a #Hotel para obtener una #Habitación según un numeroHabitacion
+[W] Añadir GetCliente() a ¿#Program? para obtener un #Cliente según una identificacion
 
-[] Añadir GetHabitacion() a ¿#Program? para obtener un #Cliente según una identificacion
+[W] Añadir GetHabitacion() al diagrama de clases
+
+[W] Añadir GetCliente() al diagrama de clases
 
 
 
