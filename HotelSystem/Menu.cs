@@ -58,26 +58,7 @@ namespace HotelSystem
         }
         public static void Reserva() // Por resolver. Ejecuta la secuencia para realizar una #Reserva.
         {
-            if (Hotel.HayHabitacionesDisponibles())
-            {
-                Hotel.MostrarDisponibilidad();
-                Console.WriteLine("¿Qué número de habitación va a reservar?");
-                string? numeroHabitacionReservar = Console.ReadLine();
-                if (Hotel.EsNumeroHabitacionValido(numeroHabitacionReservar))
-                {
-                    Recepcionista.RealizarReserva(numeroHabitacionReservar);
-                }
-                else
-                {
-                    Console.WriteLine("El número de habitación que ingreso no es válido, intente de nuevo");
-                    Console.ReadKey();
-                    Reserva();
-                }
-            }
-            else
-            {
-                Console.WriteLine("No hay habitaciones disponibles en este momento");
-            }
+            
         }
         public static void CancelarReserva() // Por resolver. Ejecuta la secuencia para cancelar una #Reserva.
         {

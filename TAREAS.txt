@@ -29,6 +29,49 @@ Métodos que podrían necesitarse más adelante
 [W] Añadir GetCliente() al diagrama de clases
 
 
+Resolver la reserva de habitaciones
+
+[W] Empezar a hacerlo todo en Recepcionista.RealizarReserva() a ver si no me enredo tanto
+
+[W] Declaración de variables locales
+
+[W] Verificación de disponibilidad de habitaciones
+
+[W] Mostrar disponibilidad
+
+[W] Ingreso número habitación
+
+[W] Verificación número habitación válido
+
+[V] Verificación habitación disponible
+
+[] Ingreso identificación
+
+[] Verificación si existe ese #Cliente
+
+[] Si no existe Construcción de #Cliente
+
+[] Ingreso fechaEntrada
+
+[] Validación fechaEntrada
+
+    [] Está bien digitado
+
+    [] Ese día no ha pasado
+
+[] Ingreso numeroNoches
+
+[] Validación numeroNoches
+
+[] Construcción de #Reserva
+
+[] Establecer estaReservada como true
+
+[] Mostrar "Reserva realizada con éxito"
+
+[] Mostrar el costo de la estancia
+
+
 
 [] Resolver cómo se des reserva una habitación
 
@@ -43,3 +86,10 @@ Métodos que podrían necesitarse más adelante
 
 
 [] Considerar si se debería pasar ConsultarPrecio() a #TipoHabitacion
+
+
+PARA UNA EXPANSIÓN
+
+[] Mostrar los precios y disponibilidad de habitaciones en todo momento en Menu.Recepcion()
+
+[] Mostrar los ingresos proyectados y precios de las habitaciones en todo momento en Menu.Administración()

@@ -37,7 +37,7 @@ class Menu <<static>>{
 }
 class Recepcionista <<static>>{
     {static} +ConsultarPrecios(): void
-    {static} +RealizarReserva(numeroHabitacion: string): void
+    {static} +RealizarReserva(): void
     {static} +CancelarReserva(): void
     {static} +CalcularCosto(): decimal
 }

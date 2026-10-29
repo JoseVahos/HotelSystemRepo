@@ -7,7 +7,7 @@ namespace HotelSystem
     internal static class Admin
     {
         // Métodos
-        public static decimal CalcularIngresosProyectados() // Calcula el promedio de ingresos por día para los tres últimos meses, calcula cuantos días faltan para terminar el mes y multiplica esas dos cantidades
+        public static decimal CalcularIngresosProyectados() // Por resolver. Calcula el promedio de la cantidad de noches reservadas para cada tipo de habitación para cada mes en los últimos tres meses. A cada promedio le resta la cantidad de noches reservadas este mes. Multiplica los resultados por el precio actual de cada tipo de habitación y los suma.
         {
             return 0.0m;
         }
