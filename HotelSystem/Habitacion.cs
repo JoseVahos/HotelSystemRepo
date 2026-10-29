@@ -4,19 +4,25 @@ using System.Text;
 
 namespace HotelSystem
 {
-    internal abstract class Habitacion
+    internal sealed class Habitacion
     {
         private string numero;
-        private float precio;
         private bool estaReservada;
-
-        public string GetHabitacionDetails()
+        private TipoHabitacion tipo;
+        public string Numero
         {
-            return $@"
-Número: {numero}
-Precio: {precio}
-{(estaReservada ? "Esta habitación está reservada" : "Esta habitación está disponible")}
-";
+            get { return numero; }
+        }
+        public bool EstaReservada
+        {
+            get { return estaReservada; }
+            set { estaReservada = value; }
+        }
+        public Habitacion(string numero, TipoHabitacion tipo)
+        {
+            this.numero = numero;
+            this.estaReservada = false;
+            this.tipo = tipo;
         }
     }
 }

@@ -4,27 +4,25 @@ using System.Text;
 
 namespace HotelSystem
 {
-    internal class Recepcionista
+    internal static class Recepcionista
     {
-        public string ConsultarPrecios()
+        public static void ConsultarPrecios()
         {
-            return "hola";
+            Console.WriteLine("Habitación simple: $" + Hotel.Simple.Precio);
+            Console.WriteLine("Habitación doble: $" + Hotel.Doble.Precio);
+            Console.WriteLine("Habitación matrimonial: $" + Hotel.Doble.Precio);
         }
-        public string ConsultarDisponibilidad()
+        public static void RealizarReserva(string numeroHabitacion)
         {
-            return "hola";
+            Console.WriteLine("Ingrese la identificación del cliente");
         }
-        public void RealizarReserva()
+        public static void CancelarReserva()
         {
 
         }
-        public void CancelarReserva()
+        public static decimal CalcularCosto()
         {
-
-        }
-        public float CalcularCosto()
-        {
-            return 0.0f;
+            return 0.0m;
         }
     }
 }

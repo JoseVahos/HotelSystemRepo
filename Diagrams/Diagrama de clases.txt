@@ -1,54 +1,62 @@
-Clases
-
 @startuml
 skinparam classAttributeIconSize 0
 !theme plain
 
-class Hotel{
-    -nombre: string
-    -direccion: string
+class Admin <<static>>{
+    {static} +CalcularIngresosProyectados(): decimal
+    {static} +ModificarPrecios(): void
 }
-
 class Cliente{
     -identificacion: string
     -nombre: string
 }
-
-abstract class Habitacion{
+class Habitacion <<sealed>>{
     -numero: string
-    -precio: float
     -estaReservada: bool
-    +GetHabitacionDetails(): string
 }
-class Simple{}
-class Doble{}
-class Matrimonial{}
-
-class Reserva{
+class Hotel <<static>>{
+    -nombre: string
+    -direccion: string
+    {static} +Setup(): void
+    {static} +HayHabitacionesDisponibles(): bool
+    {static} +MostrarDisponibilidad(): void
+    {static} +EsNumeroHabitacionValido(numeroHabitacion: string?): bool
+}
+class Menu <<static>>{
+    {static} +Primero(): void
+    {static} +Recepcion(): void
+    {static} +Reserva(): void
+    {static} +CancelarReserva(): void
+    {static} +Administrador(): void
+    {static} +ModificarPrecios(): void
+    {static} +Encabezado(): void
+}
+class Recepcionista <<static>>{
+    {static} +ConsultarPrecios(): void
+    {static} +RealizarReserva(numeroHabitacion: string): void
+    {static} +CancelarReserva(): void
+    {static} +CalcularCosto(): decimal
+}
+class Reserva <<sealed>>{
     -fechaEntrada: DateOnly
     -numeroNoches: int
 }
-class Recepcionista{
-    +ConsultarPrecios(): string
-    +ConsultarDisponibilidad(): string
-    +RealizarReserva(): void
-    +CancelarReserva(): void
-    +CalcularCosto(): float
-}
-class Admin{
-    +CalcularIngresosProyectados(): float
-    +ModificarPrecios(): void
+class TipoHabitacion <<sealed>>{
+    -nombre: string
+    -precio: decimal
 }
 
-Simple --|> Habitacion
-Doble --|> Habitacion
-Matrimonial --|> Habitacion
+Habitacion "0..*" *-- "1" TipoHabitacion: tiene
 
 Cliente "1" --* "0..*" Reserva : define
 Habitacion "1" --* "1" Reserva : define
 
-Admin "1" -- "0..*" Habitacion : Modifica
+Admin "1" -- "0..*" TipoHabitacion : Modifica
 Recepcionista "1" -- "0..*" Reserva : Realiza
 
-Hotel "1" *-- "1..*" Habitacion
+Hotel "1" *-- "1..*" Habitacion : tiene
+
+Menu -- Hotel : usa
+Menu -- Admin : usa
+Menu -- Recepcionista : usa
 @enduml

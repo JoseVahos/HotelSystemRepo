@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HotelSystem
 {
-    internal class Reserva
+    internal sealed class Reserva
     {
         private DateOnly fechaEntrada;
         private int numeroNoches;

@@ -4,13 +4,13 @@ using System.Text;
 
 namespace HotelSystem
 {
-    internal class Admin
+    internal static class Admin
     {
-        public float CalcularIngresosProyectados()
+        public static decimal CalcularIngresosProyectados()
         {
-            return 0.0f;
+            return 0.0m;
         }
-        public void ModificarPrecios()
+        public static void ModificarPrecios()
         {
 
         }
